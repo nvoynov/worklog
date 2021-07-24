@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "worklog"
+
+rpos = ARGV.index(">")
+ARGV.pop(ARGV.length - rpos) unless rpos.nil?
+ARGV << 'get' if ARGV.empty?
+Worklog::CLI.start(ARGV)
