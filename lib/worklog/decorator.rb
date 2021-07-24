@@ -42,12 +42,14 @@ module Worklog
       tracks(-> (x,_) { x >= from && x <= till })
     end
 
+# FIXME: incorrect for sunday 1
     def this_week
       today = Date.today
       from = today - today.wday + 1
       tracks(-> (x,_) { x >= from })
     end
 
+# FIXME: incorrect for sunday 1
     def prev_week
       today = Date.today
       till = today - today.wday # last sunday

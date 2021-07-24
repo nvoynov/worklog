@@ -62,9 +62,10 @@ describe Decorator do
   describe 'weeks' do
     let(:sheet) {
       today = Date.today
-      this_date = today - today.wday + 1 # this monday
+      this_date = today - (today.wday - 1) % 7 # this monday
       prev_date = this_date - 7          # prev monday
       arch_date = prev_date - 7          # before prev monday
+
       DSL.build do
         title 'Spec'
         date_format '%Y-%m-%d'
