@@ -8,7 +8,7 @@ module Worklog
 
   class CLI < Thor
     include Thor::Actions
-    namespace :timelog
+    namespace :worklog
 
     no_commands {
       def under_construction
