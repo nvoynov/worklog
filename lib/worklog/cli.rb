@@ -17,8 +17,8 @@ module Worklog
 
       def get_logs
         if Dir.glob(Worklog::LOGMASK).empty?
-          say "No *.timelog files were found in this directory"
-          say "Run '$ timelog new'"
+          say "No *.worklog files were found in this directory"
+          say "Run '$ worklog new' or create it yourself"
           exit
         end
 
