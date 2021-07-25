@@ -21,7 +21,8 @@ module Worklog
         @tracks = {}
         @date_format = "%Y-%m-%d"
         @hourly_rate = 0
-        @title = ""
+        @title =  "Unspecified"
+        @author = "Unspecified"
       end
 
       # This method adds new track to the sheet
