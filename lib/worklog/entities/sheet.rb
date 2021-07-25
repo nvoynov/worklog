@@ -10,10 +10,11 @@ module Worklog
     # This class represent sheet of tracks collection
     class Sheet
       attr_reader :tracks
+      attr_accessor :title
+      attr_accessor :author
       attr_accessor :source
       attr_accessor :date_format
       attr_accessor :hourly_rate
-      attr_accessor :title
 
 
       def initialize

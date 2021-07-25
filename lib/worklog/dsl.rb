@@ -41,6 +41,10 @@ module Worklog
       @sheet.title = title
     end
 
+    def author(author)
+      @sheet.author = author
+    end
+
     def date_format(fmt)
       @sheet.date_format = fmt
     end
