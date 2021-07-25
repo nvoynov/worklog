@@ -1,0 +1,11 @@
+# self promoting worklog example ;)
+
+title "Worklog"
+author "nvoynov"
+date_format "%Y-%m-%d" # @see Ruby documentations of Date.strptime
+hourly_rate 0
+
+track "2021-07-25", spent: "3h", task: "fixed decorator.prev_week"
+track "2021-07-25", spent: "1h", task: "added user stories and improved README"
+track "2021-07-24", spent: "4h", task: "worklog instead of timelog; released v0.1.0"
+track "2021-07-23", spent: "2h", task: "timelog instead of timesheet"

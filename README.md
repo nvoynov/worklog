@@ -33,7 +33,7 @@ The following example shows all the DSL possibilities:
 ```ruby
 title "worklog"
 author "nvoynov"
-date_format "%Y-%M-%D"
+date_format "%Y-%m-%d" # @see Ruby documentations of Date.strptime
 hourly_rate 20.00
 
 track "2021-05-22", spent: "6h30m", task: "working on use cases"
