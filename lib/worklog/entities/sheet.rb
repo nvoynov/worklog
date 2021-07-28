@@ -62,6 +62,18 @@ module Worklog
         end
       end
 
+      def spent
+        @tracks.inject(0) {|sum, (d, t)|
+          sum + t.map(&:spent).inject(:+)
+        }
+      end
+
+      def reward
+        @tracks.inject(0) {|sum, (d, t)|
+          sum + t.map(&:reward).inject(:+)          
+        }
+      end
+
     end
   end
 end

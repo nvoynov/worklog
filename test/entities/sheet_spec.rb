@@ -87,4 +87,23 @@ describe Sheet do
     end
   end
 
+  describe 'total' do
+    let(:sheet) {
+      Sheet.new.tap do |sh|
+        sh.hourly_rate = 20
+        sh.track today - 1, spent: 90, task: '1'
+        sh.track today, spent: 90, task: '2'
+        sh.track today, spent: 60, task: '3'
+      end
+    }
+
+    it '#spent must return sum(:spent)' do
+      _(sheet.spent).must_equal 240
+    end
+
+    it '#reward must return sum(:reward)' do
+      _(sheet.reward).must_equal 240 / 60 * sheet.hourly_rate
+    end
+  end
+
 end

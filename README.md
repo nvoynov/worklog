@@ -31,15 +31,21 @@ The `worklog` gem command-line interface is build on [Thor](https://github.com/r
 The following example shows all the DSL possibilities:
 
 ```ruby
-title "worklog"
-author "nvoynov"
-date_format "%Y-%m-%d" # @see Ruby documentations of Date.strptime
-hourly_rate 20.00
+require 'worklog'
 
-track "2021-05-22", spent: "6h30m", task: "working on use cases"
-track "2021-05-21", spent: "2h", task: "working on user stories", rate: 30 # this is an special hourly rate for overtime
-track "2021-05-21", spent: "8h", task: "working on user stories"
-track "2021-05-20", spent: "8h", task: "working on vision document"
+sheet = Woklog::DSL.build do
+  title "worklog"
+  author "nvoynov"
+  date_format "%Y-%m-%d" # @see Ruby documentations of Date.strptime
+  hourly_rate 20.00
+
+  track "2021-05-22", spent: "6h30m", task: "working on use cases"
+  track "2021-05-21", spent: "2h", task: "working on user stories", rate: 30 # this is an special hourly rate for overtime
+  track "2021-05-21", spent: "8h", task: "working on user stories"
+  track "2021-05-20", spent: "8h", task: "working on vision document"
+end
+sheet.spent
+sheet.reward
 ```
 
 I think to make a more serious example (sandbox) with which you can play around and see the commands in action. __TODO__ provide a complex example with multiple subjects and authors, several months of log, etc.
