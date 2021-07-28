@@ -50,6 +50,7 @@ module Worklog
       subtitle = this_week_title
       print(super(), subtitle)
     end
+
     def prev_week
       subtitle = prev_week_title
       print(super(), subtitle)
@@ -60,7 +61,7 @@ module Worklog
       def this_week_title
         today = Date.today
         from = today - (today.wday - 1) % 7
-        "from #{from}"
+        "from #{from} till #{today}"
       end
 
       def prev_week_title
