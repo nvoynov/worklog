@@ -46,10 +46,29 @@ module Worklog
       print(super(), subtitle)
     end
 
-    def this_week; print(super()); end
-    def prev_week; print(super()); end
+    def this_week
+      subtitle = this_week_title
+      print(super(), subtitle)
+    end
+    def prev_week
+      subtitle = prev_week_title
+      print(super(), subtitle)
+    end
 
     protected
+
+      def this_week_title
+        today = Date.today
+        from = today - (today.wday - 1) % 7
+        "from #{from}"
+      end
+
+      def prev_week_title
+        today = Date.today
+        from = today - 7 - (today.wday - 1) % 7
+        till = from + 6
+        "from #{from} till #{till}"
+      end
 
       def format_spent(spent)
         h = spent / 60

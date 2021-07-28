@@ -31,7 +31,6 @@ module Worklog
     end
 
     # TODO: this year, previous year?
-
     def this_month
       tracks(-> (x,_) { x >= start_of_month(Date.today) })
     end
@@ -51,7 +50,7 @@ module Worklog
 
 # FIXME: incorrect for sunday 1
     def prev_week
-      today = Date.today 
+      today = Date.today
       from = today - 7 - (today.wday - 1) % 7
       till = from + 6
       tracks(-> (x,_) { x >= from && x <= till })
