@@ -1,6 +1,6 @@
 # Worklog
 
-![worklog workflow](https://github.com/github/nvoynov/worklog/workflows/main.yml/badge.svg)
+[![Ruby](https://github.com/nvoynov/worklog/actions/workflows/main.yml/badge.svg)](https://github.com/nvoynov/worklog/actions/workflows/main.yml)
 
 Welcome to the `worklog` gem! The gem provides a simple domain-specific language (DSL) for tracking work time and a command-line interface (CLI) for processing the time spent. It'll answer some basic questions like "how much time I've spent on this project this month?", "how much I've earned the previous week?", "how much total effort for the subject was", etc.
 
