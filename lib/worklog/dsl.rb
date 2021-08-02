@@ -53,6 +53,7 @@ module Worklog
       @sheet.hourly_rate = rate
     end
 
+    # TODO: error handling 
     def read(text)
       instance_eval text
     end

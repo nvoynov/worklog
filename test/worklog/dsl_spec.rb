@@ -72,6 +72,11 @@ describe DSL do
       txt = dsl
       DSL.build() { read txt }
     end
+
+    it 'must catch errors' do
+      reader = ->(txt) { DSL.build() { read txt } }
+      reader.call("title bla-bla-bla")
+    end
   end
 
 end
