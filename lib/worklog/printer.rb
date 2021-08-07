@@ -10,9 +10,12 @@ module Worklog
       super
     end
 
-    # TODO: header for this/prev month/week
-    # TODO: grouping by months if there are more than one
     def print(report, subtitle = "")
+      # TODO: provide spec for "no traks found"
+      if report[:items].empty?
+        puts "No tracks found"
+        return
+      end
       puts "-= #{report[:title]} #{subtitle} =-"
       puts %w(Date Year Month Week Spent Reward Task).join(?\t)
       report[:items].each do |track|
